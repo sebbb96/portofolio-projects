@@ -8,30 +8,38 @@ jest.mock('path');
 
 describe('ProjectsService', () => {
   let service: ProjectsService;
-  const mockProjects = [
-    {
-      id: 1,
-      title: 'Test Project',
-      description: 'Test Description',
-      clientLink: 'https://test.com',
-      status: 'visible' as const,
-      image: 'test.jpg',
-    },
-  ];
+  let mockProjects: any[];
 
   beforeEach(async () => {
+    // Reset mock data before each test
+    mockProjects = [
+      {
+        id: 1,
+        title: 'Test Project',
+        description: 'Test Description',
+        clientLink: 'https://test.com',
+        status: 'visible' as const,
+        image: 'test.jpg',
+      },
+    ];
+
+    // Clear all mocks
+    jest.clearAllMocks();
+
+    // Setup mock implementations
+    (fs.readFileSync as jest.Mock).mockImplementation(() =>
+      JSON.stringify(mockProjects),
+    );
+
+    (fs.writeFileSync as jest.Mock).mockImplementation((path, data) => {
+      mockProjects = JSON.parse(data);
+    });
+
     const module: TestingModule = await Test.createTestingModule({
       providers: [ProjectsService],
     }).compile();
 
     service = module.get<ProjectsService>(ProjectsService);
-
-    // Mock fs methods
-    (fs.readFileSync as jest.Mock).mockReturnValue(
-      JSON.stringify(mockProjects),
-    );
-    (fs.writeFileSync as jest.Mock).mockImplementation(() => {});
-    (path.join as jest.Mock).mockReturnValue('./test/path/projects.json');
   });
 
   it('should be defined', () => {
@@ -81,8 +89,11 @@ describe('ProjectsService', () => {
 
   describe('delete', () => {
     it('should delete a project', async () => {
+      // Store the project before deletion for comparison
+      const projectToDelete = { ...mockProjects[0] };
+
       const result = service.delete(1);
-      expect(result).toEqual(mockProjects[0]);
+      expect(result).toEqual(projectToDelete);
       expect(fs.writeFileSync).toHaveBeenCalled();
     });
 

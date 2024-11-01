@@ -49,13 +49,14 @@ export function ProjectCard({
           <h3 className="text-white text-xl font-bold text-center">{title}</h3>
 
           <div className="flex gap-2">
-            <button
-              onClick={onStatusToggle}
-              className="px-4 py-2 bg-white/20 hover:bg-white/30 text-white rounded-md transition-colors"
-            >
-              {status === 'visible' ? 'Hide' : 'Show'}
-            </button>
-
+            {location.pathname === '/editprojects' && (
+              <button
+                onClick={onStatusToggle}
+                className="px-4  bg-white/20 hover:bg-white/30 text-white rounded-md transition-colors"
+              >
+                {status === 'visible' ? 'Hide' : 'Show'}
+              </button>
+            )}
             <Button className="px-4 py-2 bg-white text-black rounded-md hover:bg-white/90 transition-colors">
               <ProjectDetails
                 id={id}

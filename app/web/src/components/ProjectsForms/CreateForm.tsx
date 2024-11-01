@@ -21,6 +21,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { Button } from '../ui/button';
+import { ReloadIcon } from '@radix-ui/react-icons';
 const formSchema = z.object({
   title: z.string().min(1, 'Title is required').max(255),
   description: z
@@ -78,11 +79,9 @@ function CreateProjectForm() {
         .unwrap()
         .then(() => {
           form.reset(); // Reset form after successful submission
-          alert('Project created successfully!');
         })
         .catch((error) => {
           console.error('Failed to create project:', error);
-          alert('Failed to create project');
         });
     } catch (error) {
       console.error('Form submission error:', error);
@@ -195,7 +194,11 @@ function CreateProjectForm() {
           type="submit"
           disabled={isLoading}
         >
-          {isLoading ? 'Creating...' : 'Create Project'}
+          {isLoading ? (
+            <ReloadIcon className="mr-2 h-4 w-4 animate-spin" />
+          ) : (
+            'Create Project'
+          )}
         </Button>
         {isSuccess && (
           <p className="text-green-500">Project created successfully!</p>

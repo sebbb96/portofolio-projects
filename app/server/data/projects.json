@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1730291584433,
+    "title": "test",
+    "description": "test",
+    "clientLink": "google.com",
+    "status": "visible",
+    "image": "http://localhost:3000/uploads/image-1730291584425-215314585.jpg"
+  },
+  {
+    "id": 1730299943228,
+    "title": "test",
+    "description": "test",
+    "clientLink": "google.com",
+    "status": "visible",
+    "image": "http://localhost:3000/uploads/image-1730299943213-131941571.jpg"
+  },
+  {
+    "id": 1730300169900,
+    "title": "testareeeeeeee",
+    "description": "test",
+    "clientLink": "https://sebastian-webdev.vercel.app",
+    "status": "visible",
+    "image": "http://localhost:3000/uploads/image-1730300169893-432482079.jpg"
+  },
+  {
+    "id": 1730300226705,
+    "title": "test",
+    "description": "test",
+    "clientLink": "google.com",
+    "status": "visible",
+    "image": "http://localhost:3000/uploads/image-1730300226692-60339606.jpg"
+  },
+  {
+    "id": 1730367724290,
+    "title": "Test din formular",
+    "description": "Editare proiect test din formular",
+    "clientLink": "https://google.com",
+    "status": "visible",
+    "image": "http://localhost:3000/uploads/image-1730384601802-776621259.jpg"
+  },
+  {
+    "id": 1730384631003,
+    "title": "test creare proiect",
+    "description": "freoiahgjharnginfsagijfndsjgndfajognfdjskvndfsjbnkdfmsbdfnj",
+    "clientLink": "https://google.com",
+    "status": "visible",
+    "image": "http://localhost:3000/uploads/image-1730384630999-677610823.png"
+  },
+  {
+    "id": 1730454221181,
+    "title": "Test editare titlu proiect",
+    "description": "TEst descriere pentru proiect",
+    "clientLink": "https://google.com",
+    "status": "hidden",
+    "image": "http://localhost:3000/uploads/image-1730454221171-875831108.png"
+  },
+  {
+    "id": 1730463525985,
+    "title": "New Project",
+    "description": "New Description",
+    "clientLink": "https://new.com",
+    "status": "visible",
+    "image": "new.jpg"
+  },
+  {
+    "id": 1730463616462,
+    "title": "New Project",
+    "description": "New Description",
+    "clientLink": "https://new.com",
+    "status": "visible",
+    "image": "new.jpg"
+  },
+  {
+    "id": 1730463672966,
+    "title": "New Project",
+    "description": "New Description",
+    "clientLink": "https://new.com",
+    "status": "visible",
+    "image": "new.jpg"
+  }
+]

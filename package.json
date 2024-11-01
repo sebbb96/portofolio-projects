@@ -1,0 +1,19 @@
+{
+  "name": "root",
+  "private": true,
+  "workspaces": [
+    "app/*"
+  ],
+  "scripts": {
+    "dev": "lerna run dev",
+    "build": "lerna run build",
+    "test": "lerna run test"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^16.0.1",
+    "lerna": "^8.1.8"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react-swc": "^3.7.1"
+  }
+}
